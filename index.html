@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UniFinder Canada</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="top-bar">
+      <div class="top-links">
+        <button class="nav-link utility-btn" data-feature="My Maps">My Maps</button>
+        <span class="divider">|</span>
+        <button class="nav-link utility-btn" data-feature="Account">Account</button>
+        <span class="divider">|</span>
+        <button class="nav-link utility-btn" data-feature="Contact">Contact</button>
+      </div>
+
+      <form id="top-search-form" class="logo-search-form" autocomplete="off">
+        <label for="top-search-input" class="sr-only">Search universities</label>
+        <span class="logo-glass">⌕</span>
+        <span class="logo-text">
+          <span class="logo-uni">Uni</span><span class="logo-finder">Finder</span><span class="logo-com">.com</span>
+        </span>
+        <input id="top-search-input" type="text" placeholder="Search Canadian universities..." required />
+        <button type="submit">Search</button>
+      </form>
+
+      <button class="premium-btn utility-btn" data-feature="Premium">💎 Premium</button>
+    </header>
+
+    <main class="app-shell">
+      <section id="results-screen" class="results-screen">
+        <iframe
+          id="map-frame"
+          title="Canadian university map"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src=""
+        ></iframe>
+
+        <aside class="overlay-panel">
+          <div id="results-pane">
+            <h2>All Results</h2>
+            <p id="results-summary" class="results-summary"></p>
+            <ul id="results-list" class="results-list"></ul>
+          </div>
+
+          <div id="university-pane" class="hidden">
+            <button id="back-to-results" class="back-btn">← Back to all results</button>
+            <h2 id="uni-name"></h2>
+
+            <div class="tabs">
+              <button class="tab active" data-tab="essentials">Essentials</button>
+              <button class="tab" data-tab="community">YouTube & Reddit</button>
+            </div>
+
+            <section id="tab-essentials" class="tab-content"></section>
+            <section id="tab-community" class="tab-content hidden"></section>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
