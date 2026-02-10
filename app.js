@@ -220,7 +220,6 @@ function renderResults(results, query) {
   results.forEach((uni, idx) => {
     const li = document.createElement("li");
     li.className = "result-item";
-    li.style.setProperty("--order", String(idx));
 
     const header = document.createElement("div");
     header.className = "result-header";
