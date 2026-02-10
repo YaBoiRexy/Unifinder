@@ -15,27 +15,22 @@
         <span class="divider">|</span>
         <button class="nav-link utility-btn" data-feature="Contact">Contact</button>
       </div>
-      <div class="brand-pill">UniFinder Canada</div>
+
+      <form id="top-search-form" class="logo-search-form" autocomplete="off">
+        <label for="top-search-input" class="sr-only">Search universities</label>
+        <span class="logo-glass">⌕</span>
+        <span class="logo-text">
+          <span class="logo-uni">Uni</span><span class="logo-finder">Finder</span><span class="logo-com">.com</span>
+        </span>
+        <input id="top-search-input" type="text" placeholder="Search Canadian universities..." required />
+        <button type="submit">Search</button>
+      </form>
+
       <button class="premium-btn utility-btn" data-feature="Premium">💎 Premium</button>
     </header>
 
     <main class="app-shell">
-      <section id="search-screen" class="search-screen card">
-        <h1>Search Canadian Universities</h1>
-        <p>One search engine for high-school students comparing Canadian universities.</p>
-        <form id="search-form" class="search-form" autocomplete="off">
-          <label for="search-input" class="sr-only">Search universities</label>
-          <input
-            id="search-input"
-            type="text"
-            placeholder="Try: Ontario, engineering, business, medicine..."
-            required
-          />
-          <button type="submit">Search</button>
-        </form>
-      </section>
-
-      <section id="results-screen" class="results-screen hidden">
+      <section id="results-screen" class="results-screen">
         <iframe
           id="map-frame"
           title="Canadian university map"
@@ -45,17 +40,6 @@
         ></iframe>
 
         <aside class="overlay-panel">
-          <form id="overlay-search-form" class="search-form overlay-search-form" autocomplete="off">
-            <label for="overlay-search-input" class="sr-only">Refine your university search</label>
-            <input
-              id="overlay-search-input"
-              type="text"
-              placeholder="Refine search from here..."
-              required
-            />
-            <button type="submit">Search</button>
-          </form>
-
           <div id="results-pane">
             <h2>All Results</h2>
             <p id="results-summary" class="results-summary"></p>

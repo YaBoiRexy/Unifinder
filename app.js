@@ -6,6 +6,9 @@ const universities = [
     city: "Vancouver",
     image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/UBC_-_Irving_K._Barber_Learning_Centre.jpg/640px-UBC_-_Irving_K._Barber_Learning_Centre.jpg",
+    imageFallback: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80",
+    weatherUrl:
+      "https://www.currentresults.com/Weather/Canada/British-Columbia/Places/vancouver-temperatures-by-month-average.php",
     benefits: [
       { emoji: "💼", type: "pro", note: "Strong co-op and career pathways" },
       { emoji: "🧪", type: "pro", note: "Top research opportunities" },
@@ -14,7 +17,6 @@ const universities = [
       { emoji: "📈", type: "con", note: "Competitive entry requirements" },
     ],
     essentials: {
-      programs: ["Engineering", "Computer Science", "Commerce", "Life Sciences"],
       tuition: "Placeholder: CAD 8,000–12,000 domestic / CAD 38,000–55,000 international",
       campusLife: "Large campus with active clubs, co-op pathways, and strong athletics culture.",
       admissions: "Placeholder: competitive admission with strong Grade 11/12 average requirements.",
@@ -31,6 +33,9 @@ const universities = [
     city: "Edmonton",
     image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/University_of_Alberta%2C_Edmonton%2C_Alberta_%2828447273501%29.jpg/640px-University_of_Alberta%2C_Edmonton%2C_Alberta_%2828447273501%29.jpg",
+    imageFallback: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80",
+    weatherUrl:
+      "https://www.currentresults.com/Weather/Canada/Alberta/Places/edmonton-temperatures-by-month-average.php",
     benefits: [
       { emoji: "🔬", type: "pro", note: "Research intensive environment" },
       { emoji: "💰", type: "pro", note: "Strong value for cost" },
@@ -39,7 +44,6 @@ const universities = [
       { emoji: "🏙️", type: "con", note: "Smaller city vibe vs Toronto/Vancouver" },
     ],
     essentials: {
-      programs: ["Engineering", "Business", "Nursing", "Agriculture"],
       tuition: "Placeholder: CAD 7,000–11,000 domestic / CAD 30,000–45,000 international",
       campusLife: "Strong student union, winter-friendly facilities, and active career fairs.",
       admissions: "Placeholder: competitive averages vary by faculty and program demand.",
@@ -56,6 +60,9 @@ const universities = [
     city: "Waterloo",
     image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/University_of_Waterloo_-_Davis_Centre.jpg/640px-University_of_Waterloo_-_Davis_Centre.jpg",
+    imageFallback: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1200&q=80",
+    weatherUrl:
+      "https://www.currentresults.com/Weather/Canada/Ontario/Places/kitchener-temperatures-by-month-average.php",
     benefits: [
       { emoji: "💻", type: "pro", note: "Excellent tech pipeline" },
       { emoji: "🧠", type: "pro", note: "Strong math/engineering culture" },
@@ -64,7 +71,6 @@ const universities = [
       { emoji: "⏱️", type: "con", note: "Fast-paced terms and co-op cycles" },
     ],
     essentials: {
-      programs: ["Software Engineering", "Mathematics", "Data Science", "Architecture"],
       tuition: "Placeholder: CAD 9,000–15,000 domestic / CAD 40,000–63,000 international",
       campusLife: "Fast-paced academic culture with startup-friendly student communities.",
       admissions: "Placeholder: highly competitive for engineering and CS programs.",
@@ -79,8 +85,10 @@ const universities = [
     name: "McGill University",
     province: "Quebec",
     city: "Montreal",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/McGill_University_%28cropped%29.jpg/640px-McGill_University_%28cropped%29.jpg",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/McGill_University_Montreal.jpg/640px-McGill_University_Montreal.jpg",
+    imageFallback: "https://images.unsplash.com/photo-1466442929976-97f336a657be?auto=format&fit=crop&w=1200&q=80",
+    weatherUrl:
+      "https://www.currentresults.com/Weather/Canada/Quebec/Places/montreal-temperatures-by-month-average.php",
     benefits: [
       { emoji: "🌍", type: "pro", note: "Global reputation" },
       { emoji: "🏛️", type: "pro", note: "Historic downtown campus" },
@@ -89,7 +97,6 @@ const universities = [
       { emoji: "🗣️", type: "con", note: "French can be helpful off-campus" },
     ],
     essentials: {
-      programs: ["Medicine", "Arts", "Science", "Management"],
       tuition: "Placeholder: CAD 3,000–12,000 Quebec/domestic tiers / CAD 28,000–60,000 international",
       campusLife: "Urban campus experience with strong international student presence.",
       admissions: "Placeholder: high academic cutoffs in many faculties.",
@@ -106,6 +113,9 @@ const universities = [
     city: "Toronto",
     image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/University_College%2C_University_of_Toronto%2C_Toronto%2C_Ontario_%2832676549034%29.jpg/640px-University_College%2C_University_of_Toronto%2C_Toronto%2C_Ontario_%2832676549034%29.jpg",
+    imageFallback: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1200&q=80",
+    weatherUrl:
+      "https://www.currentresults.com/Weather/Canada/Ontario/Places/toronto-temperatures-by-month-average.php",
     benefits: [
       { emoji: "🏆", type: "pro", note: "Top ranking and reputation" },
       { emoji: "🔬", type: "pro", note: "Major research opportunities" },
@@ -114,7 +124,6 @@ const universities = [
       { emoji: "👥", type: "con", note: "Large classes in early years" },
     ],
     essentials: {
-      programs: ["Life Sciences", "Engineering", "Commerce", "Computer Science"],
       tuition: "Placeholder: CAD 6,500–15,000 domestic / CAD 45,000–67,000 international",
       campusLife: "Three campuses with major city access and large student communities.",
       admissions: "Placeholder: very competitive for selective programs and streams.",
@@ -129,8 +138,10 @@ const universities = [
     name: "Western University",
     province: "Ontario",
     city: "London",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/UWO_UCC.jpg/640px-UWO_UCC.jpg",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/UWO_UCC.jpg/640px-UWO_UCC.jpg",
+    imageFallback: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80",
+    weatherUrl:
+      "https://www.currentresults.com/Weather/Canada/Ontario/Places/london-temperatures-by-month-average.php",
     benefits: [
       { emoji: "🕸️", type: "pro", note: "Strong alumni network" },
       { emoji: "📊", type: "pro", note: "Strong business pathway" },
@@ -139,7 +150,6 @@ const universities = [
       { emoji: "📉", type: "con", note: "Selective for popular programs" },
     ],
     essentials: {
-      programs: ["Ivey Business", "Health Sciences", "Social Science", "Engineering"],
       tuition: "Placeholder: CAD 7,000–14,000 domestic / CAD 32,000–58,000 international",
       campusLife: "Vibrant residence and club scene with strong school spirit.",
       admissions: "Placeholder: competitive averages vary by faculty and major.",
@@ -151,12 +161,8 @@ const universities = [
   },
 ];
 
-const searchForm = document.getElementById("search-form");
-const searchInput = document.getElementById("search-input");
-const overlaySearchForm = document.getElementById("overlay-search-form");
-const overlaySearchInput = document.getElementById("overlay-search-input");
-const searchScreen = document.getElementById("search-screen");
-const resultsScreen = document.getElementById("results-screen");
+const topSearchForm = document.getElementById("top-search-form");
+const topSearchInput = document.getElementById("top-search-input");
 const resultsList = document.getElementById("results-list");
 const resultsSummary = document.getElementById("results-summary");
 const resultsPane = document.getElementById("results-pane");
@@ -177,16 +183,16 @@ function getSearchEmbedUrl(query) {
 
 function getUniversityEmbedUrl(university) {
   const q = `${university.name}, ${university.city}, ${university.province}, Canada`;
-  return `https://maps.google.com/maps?q=${encodeURIComponent(q)}&z=13&output=embed`;
+  return `https://maps.google.com/maps?q=${encodeURIComponent(q)}&z=11&output=embed`;
 }
 
 function filterUniversities(term) {
   const normalized = term.trim().toLowerCase();
-  if (!normalized) return [];
+  if (!normalized) return universities.slice().sort((a, b) => a.name.localeCompare(b.name));
 
   return universities
     .filter((uni) => {
-      const haystack = `${uni.name} ${uni.province} ${uni.city} ${uni.essentials.programs.join(" ")}`.toLowerCase();
+      const haystack = `${uni.name} ${uni.province} ${uni.city}`.toLowerCase();
       return haystack.includes(normalized);
     })
     .sort((a, b) => a.name.localeCompare(b.name));
@@ -196,13 +202,9 @@ function runSearch(query) {
   const results = filterUniversities(query);
   lastResults = results;
 
-  searchScreen.classList.add("hidden");
-  resultsScreen.classList.remove("hidden");
+  topSearchInput.value = query;
   resultsPane.classList.remove("hidden");
   universityPane.classList.add("hidden");
-
-  searchInput.value = query;
-  overlaySearchInput.value = query;
   renderResults(results, query);
 }
 
@@ -230,9 +232,8 @@ function renderResults(results, query) {
     img.src = uni.image;
     img.alt = `${uni.name} campus photo`;
     img.loading = "lazy";
-    img.referrerPolicy = "no-referrer";
     img.addEventListener("error", () => {
-      img.src = "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=900&q=80";
+      img.src = uni.imageFallback;
     });
 
     const textWrap = document.createElement("div");
@@ -274,12 +275,12 @@ function showUniversity(uni) {
 
   tabEssentials.innerHTML = `
     <div class="uni-detail-hero">
-      <img src="${uni.image}" alt="${uni.name} campus" loading="lazy" referrerpolicy="no-referrer" onerror="this.src='https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80'" />
+      <img src="${uni.image}" alt="${uni.name} campus" loading="lazy" onerror="this.src='${uni.imageFallback}'" />
     </div>
     <h3>Location</h3>
     <p>${uni.city}, ${uni.province}, Canada</p>
-    <h3>Popular Programs</h3>
-    <ul>${uni.essentials.programs.map((program) => `<li>${program}</li>`).join("")}</ul>
+    <h3>Weather</h3>
+    <a class="weather-button" href="${uni.weatherUrl}" target="_blank" rel="noopener noreferrer">☀️🌧️ View ${uni.city} climate trends</a>
     <h3>Tuition Snapshot</h3>
     <p>${uni.essentials.tuition}</p>
     <h3>Campus Life</h3>
@@ -313,14 +314,9 @@ function activateTab(tabName) {
   tabCommunity.classList.toggle("hidden", tabName !== "community");
 }
 
-searchForm.addEventListener("submit", (event) => {
+topSearchForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  runSearch(searchInput.value.trim());
-});
-
-overlaySearchForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-  runSearch(overlaySearchInput.value.trim());
+  runSearch(topSearchInput.value.trim());
 });
 
 backToResults.addEventListener("click", () => {
@@ -340,3 +336,5 @@ utilityButtons.forEach((btn) => {
     alert(`Sorry! ${btn.dataset.feature} isn't functional yet — this is a prototype.`);
   });
 });
+
+runSearch("");
