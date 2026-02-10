@@ -1,4 +1,4 @@
-const redditLogo = "https://www.redditstatic.com/desktop2x/img/favicon/apple-icon-180x180.png";
+const redditLogo = "assets/icons/reddit-logo.svg";
 const sharedYoutube = {
   videoId: "jtdHuXcu3J0",
   title: "How to become more likable in conversations",
@@ -6,20 +6,20 @@ const sharedYoutube = {
   subscribers: "10.9K subscribers",
   views: "378K views",
   age: "5 years ago",
-  channelLogo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Illinois_Fighting_Illini_logo.svg/240px-Illinois_Fighting_Illini_logo.svg.png",
+  channelLogo: "assets/icons/channel-logo.svg",
 };
 
 const uploadedStyleImages = [
-  "https://upload.wikimedia.org/wikipedia/commons/7/7a/Cambridge_-_King%27s_College.jpg",
-  "https://upload.wikimedia.org/wikipedia/commons/7/77/Cambridge_University%2C_King%27s_College%2C_Cambridge_UK.jpg",
-  "https://upload.wikimedia.org/wikipedia/commons/5/55/Princeton_University_Nassau_Hall.jpg",
-  "https://upload.wikimedia.org/wikipedia/commons/0/08/Royce_Hall%2C_UCLA.jpg",
-  "https://upload.wikimedia.org/wikipedia/commons/8/8f/McKeldin_Library.jpg",
-  "https://upload.wikimedia.org/wikipedia/commons/7/70/Cambridge_University_Trinity_College.jpg",
-  "https://upload.wikimedia.org/wikipedia/commons/6/6f/Harvard_University_-_Massachusetts_Hall.jpg",
-  "https://upload.wikimedia.org/wikipedia/commons/1/12/Florida_State_University_Westcott_Building.jpg",
-  "https://upload.wikimedia.org/wikipedia/commons/e/e9/University_College%2C_Oxford.jpg",
-  "https://upload.wikimedia.org/wikipedia/commons/9/9f/University_College%2C_University_of_Toronto%2C_Toronto%2C_Ontario_%2832676549034%29.jpg",
+  "assets/images/uni-1.svg",
+  "assets/images/uni-2.svg",
+  "assets/images/uni-3.svg",
+  "assets/images/uni-4.svg",
+  "assets/images/uni-5.svg",
+  "assets/images/uni-6.svg",
+  "assets/images/uni-7.svg",
+  "assets/images/uni-8.svg",
+  "assets/images/uni-9.svg",
+  "assets/images/uni-10.svg",
 ];
 
 function uniImage(idx) {

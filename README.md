@@ -1,5 +1,7 @@
 # UniFinder Canada (Static Website)
 
+Live site: https://yaboirexy.github.io/Unifinder/
+
 This project is a **fully static website** (just HTML/CSS/JS). That means:
 - No backend server is required.
 - You can host it for free with **GitHub Pages**.
