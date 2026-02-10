@@ -2,7 +2,7 @@
 
 This project is a **fully static website** (just HTML/CSS/JS). That means:
 - No backend server is required.
-- You can host it for free with **GitHub Pages**.
+- You can host it for free with **GitHub Pages**:  https://yaboirexy.github.io/Unifinder/
 - Files used: `index.html`, `styles.css`, `app.js`.
 
 ---
