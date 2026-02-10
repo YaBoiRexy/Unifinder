@@ -259,16 +259,63 @@ body {
   width: 74px;
   height: 74px;
   border-radius: 10px;
-  border: 3px solid #70d24f;
+  border: 5px solid #70d24f;
   background: #f2ffe9;
   display: grid;
   place-items: center;
   font-size: 2.25rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.emoji-chip::before,
+.emoji-chip::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+  background: #70d24f;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  z-index: 0;
+}
+
+.emoji-chip::before {
+  top: 6px;
+  left: 6px;
+}
+
+.emoji-chip::after {
+  right: 6px;
+  bottom: 6px;
 }
 
 .emoji-chip.con {
   border-color: #d61c1c;
   background: #fff0f0;
+}
+
+.emoji-chip.con::before,
+.emoji-chip.con::after {
+  background: #d61c1c;
+}
+
+.emoji-chip.con::before {
+  top: 6px;
+  right: 6px;
+  left: auto;
+}
+
+.emoji-chip.con::after {
+  left: 6px;
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-50%);
+}
+
+.emoji-chip > *,
+.emoji-chip {
+  z-index: 1;
 }
 
 .tab-strip {
@@ -378,9 +425,11 @@ body {
 
 .video-thumb {
   width: 100%;
-  height: 212px;
+  aspect-ratio: 16 / 9;
+  height: auto;
   border-radius: 10px;
-  object-fit: cover;
+  object-fit: contain;
+  background: #0e1117;
   border: 2px solid #c7d8ea;
   margin-bottom: 0.55rem;
 }
@@ -498,6 +547,7 @@ body {
   }
 
   .video-thumb {
-    height: 180px;
+    aspect-ratio: 16 / 9;
+    height: auto;
   }
 }

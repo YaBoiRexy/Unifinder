@@ -1,15 +1,29 @@
 const redditLogo = "https://www.redditstatic.com/desktop2x/img/favicon/apple-icon-180x180.png";
 const sharedYoutube = {
   videoId: "jtdHuXcu3J0",
-  title: "5 ways to connect with people",
-  channel: "TED-Ed",
-  views: "224K views",
-  age: "6 months ago",
-  channelLogo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/TED-Ed_logo.svg/320px-TED-Ed_logo.svg.png",
+  title: "How to become more likable in conversations",
+  channel: "University of Illinois Admissions",
+  subscribers: "10.9K subscribers",
+  views: "378K views",
+  age: "5 years ago",
+  channelLogo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Illinois_Fighting_Illini_logo.svg/240px-Illinois_Fighting_Illini_logo.svg.png",
 };
 
-function uniImage(sig) {
-  return `https://source.unsplash.com/1200x800/?university,campus,architecture&sig=${sig}`;
+const uploadedStyleImages = [
+  "https://upload.wikimedia.org/wikipedia/commons/7/7a/Cambridge_-_King%27s_College.jpg",
+  "https://upload.wikimedia.org/wikipedia/commons/7/77/Cambridge_University%2C_King%27s_College%2C_Cambridge_UK.jpg",
+  "https://upload.wikimedia.org/wikipedia/commons/5/55/Princeton_University_Nassau_Hall.jpg",
+  "https://upload.wikimedia.org/wikipedia/commons/0/08/Royce_Hall%2C_UCLA.jpg",
+  "https://upload.wikimedia.org/wikipedia/commons/8/8f/McKeldin_Library.jpg",
+  "https://upload.wikimedia.org/wikipedia/commons/7/70/Cambridge_University_Trinity_College.jpg",
+  "https://upload.wikimedia.org/wikipedia/commons/6/6f/Harvard_University_-_Massachusetts_Hall.jpg",
+  "https://upload.wikimedia.org/wikipedia/commons/1/12/Florida_State_University_Westcott_Building.jpg",
+  "https://upload.wikimedia.org/wikipedia/commons/e/e9/University_College%2C_Oxford.jpg",
+  "https://upload.wikimedia.org/wikipedia/commons/9/9f/University_College%2C_University_of_Toronto%2C_Toronto%2C_Ontario_%2832676549034%29.jpg",
+];
+
+function uniImage(idx) {
+  return uploadedStyleImages[idx % uploadedStyleImages.length];
 }
 
 const universities = [
@@ -38,7 +52,7 @@ const universities = [
   name: u[0], province: u[1], city: u[2], address: u[3], qsRank: u[4], qsUrl: u[5], weatherUrl: u[6], costUrl: u[7],
   costs: { domesticTuition: u[8], withRent: u[9], withHousing: u[10], noRent: u[11] },
   image: uniImage(i + 1),
-  imageFallback: uniImage(i + 51),
+  imageFallback: uniImage(i + 4),
   redditUrl: `https://www.reddit.com/search/?q=${encodeURIComponent(u[0])}`,
   benefits: ["🎓", "🌍", "📚", "💸", "⏱️"],
   essentials: {
@@ -193,6 +207,7 @@ function showUniversity(uni) {
           <div>
             <div class="video-title">${sharedYoutube.title}</div>
             <div class="video-sub">${sharedYoutube.channel}</div>
+            <div class="video-sub">${sharedYoutube.subscribers}</div>
             <div class="video-sub">${sharedYoutube.views} • ${sharedYoutube.age}</div>
           </div>
         </div>
