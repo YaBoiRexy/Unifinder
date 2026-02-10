@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UniFinder Canada</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="top-bar">
+      <div class="top-links">
+        <button class="nav-link utility-btn" data-feature="My Maps">My Maps</button>
+        <span class="divider">|</span>
+        <button class="nav-link utility-btn" data-feature="Account">Account</button>
+        <span class="divider">|</span>
+        <button class="nav-link utility-btn" data-feature="Contact">Contact</button>
+      </div>
+      <div class="brand-pill">UniFinder Canada</div>
+      <button class="premium-btn utility-btn" data-feature="Premium">💎 Premium</button>
+    </header>
+
+    <main class="app-shell">
+      <section id="search-screen" class="search-screen card">
+        <h1>Search Canadian Universities</h1>
+        <p>One search engine for high-school students comparing Canadian universities.</p>
+        <form id="search-form" class="search-form" autocomplete="off">
+          <label for="search-input" class="sr-only">Search universities</label>
+          <input
+            id="search-input"
+            type="text"
+            placeholder="Try: Ontario, engineering, business, medicine..."
+            required
+          />
+          <button type="submit">Search</button>
+        </form>
+      </section>
+
+      <section id="results-screen" class="results-screen hidden">
+        <iframe
+          id="map-frame"
+          title="Canadian university map"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src=""
+        ></iframe>
+
+        <aside class="overlay-panel">
+          <form id="overlay-search-form" class="search-form overlay-search-form" autocomplete="off">
+            <label for="overlay-search-input" class="sr-only">Refine your university search</label>
+            <input
+              id="overlay-search-input"
+              type="text"
+              placeholder="Refine search from here..."
+              required
+            />
+            <button type="submit">Search</button>
+          </form>
+
+          <div id="results-pane">
+            <h2>All Results</h2>
+            <p id="results-summary" class="results-summary"></p>
+            <ul id="results-list" class="results-list"></ul>
+          </div>
+
+          <div id="university-pane" class="hidden">
+            <button id="back-to-results" class="back-btn">← Back to all results</button>
+            <h2 id="uni-name"></h2>
+
+            <div class="tabs">
+              <button class="tab active" data-tab="essentials">Essentials</button>
+              <button class="tab" data-tab="community">YouTube & Reddit</button>
+            </div>
+
+            <section id="tab-essentials" class="tab-content"></section>
+            <section id="tab-community" class="tab-content hidden"></section>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
