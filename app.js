@@ -1,4 +1,4 @@
-const redditLogo = "assets/icons/reddit-logo.jpg";
+const redditLogo = "https://i.imgur.com/u7osQv8.jpg";
 const sharedYoutube = {
   videoId: "jtdHuXcu3J0",
   title: "Campus Tour with Kaitlin!",
@@ -10,16 +10,16 @@ const sharedYoutube = {
 };
 
 const uploadedStyleImages = [
-  "assets/images/1883847.jpg",
-  "assets/images/1912151.jpg",
-  "assets/images/2011828.jpg",
-  "assets/images/R (1).jpg",
-  "assets/images/R.jpg",
-  "assets/images/thumb-1920-684535.jpg",
-  "assets/images/university-2704306_1280.jpg",
-  "assets/images/wp2468660.jpg",
-  "assets/images/R (2).jpg",
-  "assets/images/pexels-pixabay-207684.jpg",
+  "https://i.imgur.com/EJdHWiK.jpg",
+  "https://i.imgur.com/NcrFYyE.jpg",
+  "https://i.imgur.com/S6vl3bg.jpg",
+  "https://i.imgur.com/oPrkAM0.jpg",
+  "https://i.imgur.com/mE3FIVS.jpg",
+  "https://i.imgur.com/Ztt110y.jpg",
+  "https://i.imgur.com/hZXCCjz.jpg",
+  "https://i.imgur.com/aD2cm1B.jpg",
+  "https://i.imgur.com/gFM5HuG.jpg",
+  "https://i.imgur.com/gIeja9B.jpg",
 ];
 
 function uniImage(idx) {
