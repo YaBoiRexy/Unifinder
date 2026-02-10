@@ -220,6 +220,7 @@ function renderResults(results, query) {
   results.forEach((uni, idx) => {
     const li = document.createElement("li");
     li.className = "result-item";
+    li.style.setProperty("--order", String(idx));
 
     const header = document.createElement("div");
     header.className = "result-header";
@@ -228,6 +229,11 @@ function renderResults(results, query) {
     img.className = "uni-photo";
     img.src = uni.image;
     img.alt = `${uni.name} campus photo`;
+    img.loading = "lazy";
+    img.referrerPolicy = "no-referrer";
+    img.addEventListener("error", () => {
+      img.src = "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=900&q=80";
+    });
 
     const textWrap = document.createElement("div");
 
@@ -267,6 +273,9 @@ function showUniversity(uni) {
   const essentialsEmoji = uni.benefits.map((item) => `<li>${item.emoji} ${item.note}</li>`).join("");
 
   tabEssentials.innerHTML = `
+    <div class="uni-detail-hero">
+      <img src="${uni.image}" alt="${uni.name} campus" loading="lazy" referrerpolicy="no-referrer" onerror="this.src='https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80'" />
+    </div>
     <h3>Location</h3>
     <p>${uni.city}, ${uni.province}, Canada</p>
     <h3>Popular Programs</h3>
