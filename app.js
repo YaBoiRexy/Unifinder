@@ -1,33 +1,69 @@
+const redditLogo =
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Reddit_alien_logo.svg/64px-Reddit_alien_logo.svg.png";
+
+const qsWorldRankings = {
+  "University of Toronto": 25,
+  "McGill University": 29,
+  "University of British Columbia": 38,
+  "University of Alberta": 96,
+  "University of Waterloo": 115,
+  "Western University": 114,
+  "Université de Montréal": 159,
+  "McMaster University": 176,
+  "University of Ottawa": 189,
+  "Queen's University": 193,
+  "University of Calgary": 198,
+  "Dalhousie University": 275,
+  "Simon Fraser University": 318,
+  "University of Saskatchewan": 340,
+  "University of Victoria": 349,
+  "University of Manitoba": 661,
+  "York University": 353,
+  "Carleton University": 741,
+  "Laval University": 423,
+  "Memorial University of Newfoundland": 661,
+  "University of New Brunswick": 711,
+};
+
 const universities = [
   {
-    id: "ubc",
     name: "University of British Columbia",
     province: "British Columbia",
     city: "Vancouver",
     image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/UBC_-_Irving_K._Barber_Learning_Centre.jpg/640px-UBC_-_Irving_K._Barber_Learning_Centre.jpg",
-    imageFallback: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80",
+    imageFallback: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80",
     weatherUrl:
       "https://www.currentresults.com/Weather/Canada/British-Columbia/Places/vancouver-temperatures-by-month-average.php",
-    benefits: [
-      { emoji: "💼", type: "pro", note: "Strong co-op and career pathways" },
-      { emoji: "🧪", type: "pro", note: "Top research opportunities" },
-      { emoji: "🌊", type: "pro", note: "Great Vancouver setting" },
-      { emoji: "💸", type: "con", note: "Higher living costs in Vancouver" },
-      { emoji: "📈", type: "con", note: "Competitive entry requirements" },
-    ],
+    youtubeVideoId: "kY6f9QpP5kM",
+    youtubeTitle: "UBC Campus Tour",
+    redditUrl: "https://www.reddit.com/r/UBC/",
+    benefits: ["💼", "🧪", "🌊", "💸", "📈"],
     essentials: {
-      tuition: "Placeholder: CAD 8,000–12,000 domestic / CAD 38,000–55,000 international",
-      campusLife: "Large campus with active clubs, co-op pathways, and strong athletics culture.",
-      admissions: "Placeholder: competitive admission with strong Grade 11/12 average requirements.",
-    },
-    community: {
-      youtube: [{ label: "Campus tour", url: "https://www.youtube.com/results?search_query=UBC+campus+tour" }],
-      reddit: [{ label: "r/UBC", url: "https://www.reddit.com/r/UBC/" }],
+      tuition: "Placeholder: CAD 8k–12k domestic / CAD 38k–55k international",
+      campusLife: "Large campus with active clubs and major co-op opportunities.",
+      admissions: "Competitive admission averages in most faculties.",
     },
   },
   {
-    id: "ualberta",
+    name: "Simon Fraser University",
+    province: "British Columbia",
+    city: "Burnaby",
+    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80",
+    imageFallback: "https://images.unsplash.com/photo-1462536943532-57a629f6cc60?auto=format&fit=crop&w=1200&q=80",
+    weatherUrl:
+      "https://www.currentresults.com/Weather/Canada/British-Columbia/Places/vancouver-temperatures-by-month-average.php",
+    youtubeVideoId: "T6vA4jY0e18",
+    youtubeTitle: "SFU Student Experience",
+    redditUrl: "https://www.reddit.com/r/simonfraser/",
+    benefits: ["📚", "🏙️", "🌲", "💸", "⛰️"],
+    essentials: {
+      tuition: "Placeholder: CAD 7k–11k domestic / CAD 30k–42k international",
+      campusLife: "Mountain-top campus with strong commuter and club culture.",
+      admissions: "Moderately competitive with program-based variation.",
+    },
+  },
+  {
     name: "University of Alberta",
     province: "Alberta",
     city: "Edmonton",
@@ -36,52 +72,217 @@ const universities = [
     imageFallback: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80",
     weatherUrl:
       "https://www.currentresults.com/Weather/Canada/Alberta/Places/edmonton-temperatures-by-month-average.php",
-    benefits: [
-      { emoji: "🔬", type: "pro", note: "Research intensive environment" },
-      { emoji: "💰", type: "pro", note: "Strong value for cost" },
-      { emoji: "🧑‍🤝‍🧑", type: "pro", note: "Supportive student community" },
-      { emoji: "❄️", type: "con", note: "Very cold winters" },
-      { emoji: "🏙️", type: "con", note: "Smaller city vibe vs Toronto/Vancouver" },
-    ],
+    youtubeVideoId: "p2R8h8Y2B6o",
+    youtubeTitle: "University of Alberta Tour",
+    redditUrl: "https://www.reddit.com/r/uAlberta/",
+    benefits: ["🔬", "💰", "🧑‍🤝‍🧑", "❄️", "🏙️"],
     essentials: {
-      tuition: "Placeholder: CAD 7,000–11,000 domestic / CAD 30,000–45,000 international",
-      campusLife: "Strong student union, winter-friendly facilities, and active career fairs.",
-      admissions: "Placeholder: competitive averages vary by faculty and program demand.",
-    },
-    community: {
-      youtube: [{ label: "Campus tour", url: "https://www.youtube.com/results?search_query=University+of+Alberta+campus+tour" }],
-      reddit: [{ label: "r/uAlberta", url: "https://www.reddit.com/r/uAlberta/" }],
+      tuition: "Placeholder: CAD 7k–11k domestic / CAD 30k–45k international",
+      campusLife: "Strong student union and active research community.",
+      admissions: "Competitive averages vary by faculty demand.",
     },
   },
   {
-    id: "waterloo",
+    name: "University of Calgary",
+    province: "Alberta",
+    city: "Calgary",
+    image: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=1200&q=80",
+    imageFallback: "https://images.unsplash.com/photo-1473773508845-188df298d2d1?auto=format&fit=crop&w=1200&q=80",
+    weatherUrl:
+      "https://www.currentresults.com/Weather/Canada/Alberta/Places/calgary-temperatures-by-month-average.php",
+    youtubeVideoId: "0SpR8Nf6M4Y",
+    youtubeTitle: "UCalgary Campus Life",
+    redditUrl: "https://www.reddit.com/r/UCalgary/",
+    benefits: ["⛰️", "⚙️", "💼", "❄️", "🚗"],
+    essentials: {
+      tuition: "Placeholder: CAD 7k–12k domestic / CAD 28k–40k international",
+      campusLife: "Prairie city feel with strong engineering and business pathways.",
+      admissions: "Program competitiveness varies across faculties.",
+    },
+  },
+  {
+    name: "University of Saskatchewan",
+    province: "Saskatchewan",
+    city: "Saskatoon",
+    image: "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1200&q=80",
+    imageFallback: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80",
+    weatherUrl:
+      "https://www.currentresults.com/Weather/Canada/Saskatchewan/Places/saskatoon-temperatures-by-month-average.php",
+    youtubeVideoId: "FxrM8N4Vby0",
+    youtubeTitle: "U of S Campus Tour",
+    redditUrl: "https://www.reddit.com/r/usask/",
+    benefits: ["🌾", "🩺", "💰", "❄️", "🏙️"],
+    essentials: {
+      tuition: "Placeholder: CAD 7k–10k domestic / CAD 24k–38k international",
+      campusLife: "Supportive campus with growing student communities.",
+      admissions: "Generally accessible with select competitive programs.",
+    },
+  },
+  {
+    name: "University of Manitoba",
+    province: "Manitoba",
+    city: "Winnipeg",
+    image: "https://images.unsplash.com/photo-1541339907198-aa1c6b0eaa52?auto=format&fit=crop&w=1200&q=80",
+    imageFallback: "https://images.unsplash.com/photo-1462536943532-57a629f6cc60?auto=format&fit=crop&w=1200&q=80",
+    weatherUrl:
+      "https://www.currentresults.com/Weather/Canada/Manitoba/Places/winnipeg-temperatures-by-month-average.php",
+    youtubeVideoId: "0Jr6V7sI4_w",
+    youtubeTitle: "University of Manitoba Overview",
+    redditUrl: "https://www.reddit.com/r/umanitoba/",
+    benefits: ["💰", "🧪", "🏒", "❄️", "🌬️"],
+    essentials: {
+      tuition: "Placeholder: CAD 6k–10k domestic / CAD 22k–35k international",
+      campusLife: "Large prairie university with diverse faculties.",
+      admissions: "Varies by faculty and entry route.",
+    },
+  },
+  {
+    name: "University of Toronto",
+    province: "Ontario",
+    city: "Toronto",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/University_College%2C_University_of_Toronto%2C_Toronto%2C_Ontario_%2832676549034%29.jpg/640px-University_College%2C_University_of_Toronto%2C_Toronto%2C_Ontario_%2832676549034%29.jpg",
+    imageFallback: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1200&q=80",
+    weatherUrl:
+      "https://www.currentresults.com/Weather/Canada/Ontario/Places/toronto-temperatures-by-month-average.php",
+    youtubeVideoId: "fk4x0V6Aq6Q",
+    youtubeTitle: "UofT Campus Tour",
+    redditUrl: "https://www.reddit.com/r/UofT/",
+    benefits: ["🏆", "🔬", "🧭", "💸", "👥"],
+    essentials: {
+      tuition: "Placeholder: CAD 6.5k–15k domestic / CAD 45k–67k international",
+      campusLife: "Three campuses with major city access and huge networks.",
+      admissions: "Very competitive for selective streams.",
+    },
+  },
+  {
+    name: "York University",
+    province: "Ontario",
+    city: "Toronto",
+    image: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80",
+    imageFallback: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80",
+    weatherUrl:
+      "https://www.currentresults.com/Weather/Canada/Ontario/Places/toronto-temperatures-by-month-average.php",
+    youtubeVideoId: "fWfR3IP9Q7Q",
+    youtubeTitle: "York University Student Life",
+    redditUrl: "https://www.reddit.com/r/yorku/",
+    benefits: ["🌍", "🚇", "📚", "👥", "💸"],
+    essentials: {
+      tuition: "Placeholder: CAD 7k–11k domestic / CAD 30k–40k international",
+      campusLife: "Large commuter-focused urban campus with diverse programs.",
+      admissions: "Varies significantly by program.",
+    },
+  },
+  {
+    name: "McMaster University",
+    province: "Ontario",
+    city: "Hamilton",
+    image: "https://images.unsplash.com/photo-1545239351-ef35f43d514b?auto=format&fit=crop&w=1200&q=80",
+    imageFallback: "https://images.unsplash.com/photo-1473773508845-188df298d2d1?auto=format&fit=crop&w=1200&q=80",
+    weatherUrl:
+      "https://www.currentresults.com/Weather/Canada/Ontario/Places/hamilton-temperatures-by-month-average.php",
+    youtubeVideoId: "6M5VK6Qw6Y4",
+    youtubeTitle: "McMaster Day in the Life",
+    redditUrl: "https://www.reddit.com/r/McMaster/",
+    benefits: ["🩺", "🧩", "🤝", "📈", "💼"],
+    essentials: {
+      tuition: "Placeholder: CAD 6.5k–11.5k domestic / CAD 28k–48k international",
+      campusLife: "Close-knit campus and strong student supports.",
+      admissions: "Highly competitive for health-focused streams.",
+    },
+  },
+  {
     name: "University of Waterloo",
     province: "Ontario",
     city: "Waterloo",
     image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/University_of_Waterloo_-_Davis_Centre.jpg/640px-University_of_Waterloo_-_Davis_Centre.jpg",
-    imageFallback: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1200&q=80",
+    imageFallback: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80",
     weatherUrl:
       "https://www.currentresults.com/Weather/Canada/Ontario/Places/kitchener-temperatures-by-month-average.php",
-    benefits: [
-      { emoji: "💻", type: "pro", note: "Excellent tech pipeline" },
-      { emoji: "🧠", type: "pro", note: "Strong math/engineering culture" },
-      { emoji: "🤝", type: "pro", note: "Famous co-op placements" },
-      { emoji: "📚", type: "con", note: "Heavy workload" },
-      { emoji: "⏱️", type: "con", note: "Fast-paced terms and co-op cycles" },
-    ],
+    youtubeVideoId: "sxA9xNjf8iQ",
+    youtubeTitle: "Waterloo Co-op Explained",
+    redditUrl: "https://www.reddit.com/r/uwaterloo/",
+    benefits: ["💻", "🧠", "🤝", "📚", "⏱️"],
     essentials: {
-      tuition: "Placeholder: CAD 9,000–15,000 domestic / CAD 40,000–63,000 international",
-      campusLife: "Fast-paced academic culture with startup-friendly student communities.",
-      admissions: "Placeholder: highly competitive for engineering and CS programs.",
-    },
-    community: {
-      youtube: [{ label: "Student life", url: "https://www.youtube.com/results?search_query=Waterloo+co-op+student+life" }],
-      reddit: [{ label: "r/uwaterloo", url: "https://www.reddit.com/r/uwaterloo/" }],
+      tuition: "Placeholder: CAD 9k–15k domestic / CAD 40k–63k international",
+      campusLife: "Fast-paced co-op terms and tech/startup ecosystem.",
+      admissions: "Very competitive for CS/engineering.",
     },
   },
   {
-    id: "mcgill",
+    name: "Western University",
+    province: "Ontario",
+    city: "London",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/UWO_UCC.jpg/640px-UWO_UCC.jpg",
+    imageFallback: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=1200&q=80",
+    weatherUrl:
+      "https://www.currentresults.com/Weather/Canada/Ontario/Places/london-temperatures-by-month-average.php",
+    youtubeVideoId: "iWjL5mW5u9A",
+    youtubeTitle: "Western Campus Tour",
+    redditUrl: "https://www.reddit.com/r/uwo/",
+    benefits: ["🕸️", "📊", "🎉", "🚗", "📉"],
+    essentials: {
+      tuition: "Placeholder: CAD 7k–14k domestic / CAD 32k–58k international",
+      campusLife: "Vibrant residence life and strong alumni network.",
+      admissions: "Competitive cutoffs vary by faculty.",
+    },
+  },
+  {
+    name: "Queen's University",
+    province: "Ontario",
+    city: "Kingston",
+    image: "https://images.unsplash.com/photo-1519452575417-564c1401ecc0?auto=format&fit=crop&w=1200&q=80",
+    imageFallback: "https://images.unsplash.com/photo-1462536943532-57a629f6cc60?auto=format&fit=crop&w=1200&q=80",
+    weatherUrl:
+      "https://www.currentresults.com/Weather/Canada/Ontario/Places/kingston-temperatures-by-month-average.php",
+    youtubeVideoId: "3uEO3W9r3is",
+    youtubeTitle: "Queen's University Tour",
+    redditUrl: "https://www.reddit.com/r/queensuniversity/",
+    benefits: ["🏛️", "📘", "🎉", "💸", "📈"],
+    essentials: {
+      tuition: "Placeholder: CAD 7k–13k domestic / CAD 30k–50k international",
+      campusLife: "Traditional campus town with strong school spirit.",
+      admissions: "Competitive for commerce and health programs.",
+    },
+  },
+  {
+    name: "University of Ottawa",
+    province: "Ontario",
+    city: "Ottawa",
+    image: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1200&q=80",
+    imageFallback: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80",
+    weatherUrl:
+      "https://www.currentresults.com/Weather/Canada/Ontario/Places/ottawa-temperatures-by-month-average.php",
+    youtubeVideoId: "Y5Q3nBIv8hI",
+    youtubeTitle: "uOttawa Student Experience",
+    redditUrl: "https://www.reddit.com/r/geegees/",
+    benefits: ["🗣️", "🏛️", "💼", "🚲", "❄️"],
+    essentials: {
+      tuition: "Placeholder: CAD 7.5k–12k domestic / CAD 35k–53k international",
+      campusLife: "Capital-city opportunities and bilingual options.",
+      admissions: "Averages differ by faculty and stream.",
+    },
+  },
+  {
+    name: "Carleton University",
+    province: "Ontario",
+    city: "Ottawa",
+    image: "https://images.unsplash.com/photo-1523240798132-8757214e76e9?auto=format&fit=crop&w=1200&q=80",
+    imageFallback: "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1200&q=80",
+    weatherUrl:
+      "https://www.currentresults.com/Weather/Canada/Ontario/Places/ottawa-temperatures-by-month-average.php",
+    youtubeVideoId: "k5b9xK8N0uM",
+    youtubeTitle: "Carleton Campus Tour",
+    redditUrl: "https://www.reddit.com/r/CarletonU/",
+    benefits: ["🛰️", "✍️", "🏛️", "❄️", "📈"],
+    essentials: {
+      tuition: "Placeholder: CAD 7k–11k domestic / CAD 28k–42k international",
+      campusLife: "Riverfront campus and strong co-op culture.",
+      admissions: "Program-specific cutoffs.",
+    },
+  },
+  {
     name: "McGill University",
     province: "Quebec",
     city: "Montreal",
@@ -89,101 +290,152 @@ const universities = [
     imageFallback: "https://images.unsplash.com/photo-1466442929976-97f336a657be?auto=format&fit=crop&w=1200&q=80",
     weatherUrl:
       "https://www.currentresults.com/Weather/Canada/Quebec/Places/montreal-temperatures-by-month-average.php",
-    benefits: [
-      { emoji: "🌍", type: "pro", note: "Global reputation" },
-      { emoji: "🏛️", type: "pro", note: "Historic downtown campus" },
-      { emoji: "🎭", type: "pro", note: "Great Montreal culture" },
-      { emoji: "📈", type: "con", note: "Competitive admissions" },
-      { emoji: "🗣️", type: "con", note: "French can be helpful off-campus" },
-    ],
+    youtubeVideoId: "B7kQf0O2j5k",
+    youtubeTitle: "McGill Campus Walkthrough",
+    redditUrl: "https://www.reddit.com/r/mcgill/",
+    benefits: ["🌍", "🏛️", "🎭", "📈", "🗣️"],
     essentials: {
-      tuition: "Placeholder: CAD 3,000–12,000 Quebec/domestic tiers / CAD 28,000–60,000 international",
-      campusLife: "Urban campus experience with strong international student presence.",
-      admissions: "Placeholder: high academic cutoffs in many faculties.",
-    },
-    community: {
-      youtube: [{ label: "Student experience", url: "https://www.youtube.com/results?search_query=McGill+student+experience" }],
-      reddit: [{ label: "r/mcgill", url: "https://www.reddit.com/r/mcgill/" }],
+      tuition: "Placeholder: CAD 3k–12k domestic tiers / CAD 28k–60k international",
+      campusLife: "Urban bilingual environment with global peers.",
+      admissions: "High academic standards in many faculties.",
     },
   },
   {
-    id: "utoronto",
-    name: "University of Toronto",
-    province: "Ontario",
-    city: "Toronto",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/University_College%2C_University_of_Toronto%2C_Toronto%2C_Ontario_%2832676549034%29.jpg/640px-University_College%2C_University_of_Toronto%2C_Toronto%2C_Ontario_%2832676549034%29.jpg",
-    imageFallback: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1200&q=80",
+    name: "Université de Montréal",
+    province: "Quebec",
+    city: "Montreal",
+    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80",
+    imageFallback: "https://images.unsplash.com/photo-1545239351-ef35f43d514b?auto=format&fit=crop&w=1200&q=80",
     weatherUrl:
-      "https://www.currentresults.com/Weather/Canada/Ontario/Places/toronto-temperatures-by-month-average.php",
-    benefits: [
-      { emoji: "🏆", type: "pro", note: "Top ranking and reputation" },
-      { emoji: "🔬", type: "pro", note: "Major research opportunities" },
-      { emoji: "🧭", type: "pro", note: "Huge range of programs" },
-      { emoji: "💸", type: "con", note: "Expensive city and living costs" },
-      { emoji: "👥", type: "con", note: "Large classes in early years" },
-    ],
+      "https://www.currentresults.com/Weather/Canada/Quebec/Places/montreal-temperatures-by-month-average.php",
+    youtubeVideoId: "f5f3f6z2WfA",
+    youtubeTitle: "UdeM Campus Overview",
+    redditUrl: "https://www.reddit.com/r/montreal/",
+    benefits: ["🇫🇷", "🔬", "🏙️", "❄️", "📚"],
     essentials: {
-      tuition: "Placeholder: CAD 6,500–15,000 domestic / CAD 45,000–67,000 international",
-      campusLife: "Three campuses with major city access and large student communities.",
-      admissions: "Placeholder: very competitive for selective programs and streams.",
-    },
-    community: {
-      youtube: [{ label: "UofT student stories", url: "https://www.youtube.com/results?search_query=University+of+Toronto+student+life" }],
-      reddit: [{ label: "r/UofT", url: "https://www.reddit.com/r/UofT/" }],
+      tuition: "Placeholder: CAD 4k–11k domestic tiers / CAD 24k–45k international",
+      campusLife: "French-language powerhouse in Montreal.",
+      admissions: "Varies by program and language background.",
     },
   },
   {
-    id: "uwo",
-    name: "Western University",
-    province: "Ontario",
-    city: "London",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/UWO_UCC.jpg/640px-UWO_UCC.jpg",
-    imageFallback: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80",
+    name: "Laval University",
+    province: "Quebec",
+    city: "Quebec City",
+    image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1200&q=80",
+    imageFallback: "https://images.unsplash.com/photo-1523240798132-8757214e76e9?auto=format&fit=crop&w=1200&q=80",
     weatherUrl:
-      "https://www.currentresults.com/Weather/Canada/Ontario/Places/london-temperatures-by-month-average.php",
-    benefits: [
-      { emoji: "🕸️", type: "pro", note: "Strong alumni network" },
-      { emoji: "📊", type: "pro", note: "Strong business pathway" },
-      { emoji: "🎉", type: "pro", note: "Active campus life" },
-      { emoji: "🚗", type: "con", note: "Less transit than major metros" },
-      { emoji: "📉", type: "con", note: "Selective for popular programs" },
-    ],
+      "https://www.currentresults.com/Weather/Canada/Quebec/Places/quebec-city-temperatures-by-month-average.php",
+    youtubeVideoId: "5tV7fd5l5b8",
+    youtubeTitle: "Laval University Tour",
+    redditUrl: "https://www.reddit.com/r/quebeccity/",
+    benefits: ["🇫🇷", "🏰", "🔬", "❄️", "📉"],
     essentials: {
-      tuition: "Placeholder: CAD 7,000–14,000 domestic / CAD 32,000–58,000 international",
-      campusLife: "Vibrant residence and club scene with strong school spirit.",
-      admissions: "Placeholder: competitive averages vary by faculty and major.",
+      tuition: "Placeholder: CAD 4k–10k domestic / CAD 21k–38k international",
+      campusLife: "Classic Quebec City setting with strong French culture.",
+      admissions: "Program-based and language-dependent criteria.",
     },
-    community: {
-      youtube: [{ label: "Western campus tour", url: "https://www.youtube.com/results?search_query=Western+University+campus+tour" }],
-      reddit: [{ label: "r/uwo", url: "https://www.reddit.com/r/uwo/" }],
+  },
+  {
+    name: "Dalhousie University",
+    province: "Nova Scotia",
+    city: "Halifax",
+    image: "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1200&q=80",
+    imageFallback: "https://images.unsplash.com/photo-1519452575417-564c1401ecc0?auto=format&fit=crop&w=1200&q=80",
+    weatherUrl:
+      "https://www.currentresults.com/Weather/Canada/Nova-Scotia/Places/halifax-temperatures-by-month-average.php",
+    youtubeVideoId: "i2aDkV4iQqY",
+    youtubeTitle: "Dalhousie Campus Tour",
+    redditUrl: "https://www.reddit.com/r/dalhousie/",
+    benefits: ["🌊", "🩺", "⚓", "🌧️", "💰"],
+    essentials: {
+      tuition: "Placeholder: CAD 8k–12k domestic / CAD 24k–40k international",
+      campusLife: "Coastal city atmosphere and strong professional programs.",
+      admissions: "Competitive by faculty.",
+    },
+  },
+  {
+    name: "Memorial University of Newfoundland",
+    province: "Newfoundland and Labrador",
+    city: "St. John's",
+    image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1200&q=80",
+    imageFallback: "https://images.unsplash.com/photo-1473773508845-188df298d2d1?auto=format&fit=crop&w=1200&q=80",
+    weatherUrl:
+      "https://www.currentresults.com/Weather/Canada/Newfoundland-Labrador/Places/st-johns-temperatures-by-month-average.php",
+    youtubeVideoId: "6g28pWm5HkU",
+    youtubeTitle: "Memorial University Campus",
+    redditUrl: "https://www.reddit.com/r/newfoundland/",
+    benefits: ["💰", "🌊", "🧑‍🤝‍🧑", "🌧️", "🛫"],
+    essentials: {
+      tuition: "Placeholder: CAD 6k–9k domestic / CAD 12k–24k international",
+      campusLife: "Affordable Atlantic campus with close community feel.",
+      admissions: "Generally accessible with select competitive programs.",
+    },
+  },
+  {
+    name: "University of New Brunswick",
+    province: "New Brunswick",
+    city: "Fredericton",
+    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80",
+    imageFallback: "https://images.unsplash.com/photo-1523240798132-8757214e76e9?auto=format&fit=crop&w=1200&q=80",
+    weatherUrl:
+      "https://www.currentresults.com/Weather/Canada/New-Brunswick/Places/fredericton-temperatures-by-month-average.php",
+    youtubeVideoId: "xwS0Dq4lSWQ",
+    youtubeTitle: "UNB Student Life",
+    redditUrl: "https://www.reddit.com/r/newbrunswickcanada/",
+    benefits: ["⚙️", "🌲", "💰", "❄️", "🚌"],
+    essentials: {
+      tuition: "Placeholder: CAD 7k–10k domestic / CAD 18k–30k international",
+      campusLife: "Smaller city atmosphere with engaged student life.",
+      admissions: "Program-specific requirements.",
+    },
+  },
+  {
+    name: "University of Victoria",
+    province: "British Columbia",
+    city: "Victoria",
+    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80",
+    imageFallback: "https://images.unsplash.com/photo-1519452575417-564c1401ecc0?auto=format&fit=crop&w=1200&q=80",
+    weatherUrl:
+      "https://www.currentresults.com/Weather/Canada/British-Columbia/Places/victoria-temperatures-by-month-average.php",
+    youtubeVideoId: "v_d6hCAeYBs",
+    youtubeTitle: "UVic Campus Walk",
+    redditUrl: "https://www.reddit.com/r/uvic/",
+    benefits: ["🌤️", "🌲", "🚲", "💸", "🏝️"],
+    essentials: {
+      tuition: "Placeholder: CAD 6k–10k domestic / CAD 26k–40k international",
+      campusLife: "Mild climate and coastal lifestyle near campus.",
+      admissions: "Moderate competitiveness by program.",
     },
   },
 ];
 
 const topSearchForm = document.getElementById("top-search-form");
 const topSearchInput = document.getElementById("top-search-input");
+const logoActivator = document.getElementById("logo-activator");
+const searchPill = document.querySelector(".search-pill");
 const resultsList = document.getElementById("results-list");
 const resultsSummary = document.getElementById("results-summary");
 const resultsPane = document.getElementById("results-pane");
 const universityPane = document.getElementById("university-pane");
 const mapFrame = document.getElementById("map-frame");
 const uniName = document.getElementById("uni-name");
-const tabEssentials = document.getElementById("tab-essentials");
+const tabInformation = document.getElementById("tab-information");
 const tabCommunity = document.getElementById("tab-community");
 const backToResults = document.getElementById("back-to-results");
-const tabs = document.querySelectorAll(".tab");
+const tabs = document.querySelectorAll(".tab-btn");
 const utilityButtons = document.querySelectorAll(".utility-btn");
 
 let lastResults = [];
+let savedSearchText = "";
 
 function getSearchEmbedUrl(query) {
-  return `https://maps.google.com/maps?q=${encodeURIComponent(query)}&z=4&output=embed`;
+  return `https://maps.google.com/maps?q=${encodeURIComponent(query)}&t=k&z=4&output=embed`;
 }
 
 function getUniversityEmbedUrl(university) {
   const q = `${university.name}, ${university.city}, ${university.province}, Canada`;
-  return `https://maps.google.com/maps?q=${encodeURIComponent(q)}&z=11&output=embed`;
+  return `https://maps.google.com/maps?q=${encodeURIComponent(q)}&t=k&z=11&output=embed`;
 }
 
 function filterUniversities(term) {
@@ -198,14 +450,43 @@ function filterUniversities(term) {
     .sort((a, b) => a.name.localeCompare(b.name));
 }
 
-function runSearch(query) {
-  const results = filterUniversities(query);
-  lastResults = results;
+function openSearchInput(showSaved = true) {
+  searchPill.classList.remove("logo-mode");
+  searchPill.classList.add("input-mode");
+  if (showSaved) {
+    topSearchInput.value = savedSearchText;
+  }
+  topSearchInput.focus();
+  topSearchInput.select();
+}
 
-  topSearchInput.value = query;
-  resultsPane.classList.remove("hidden");
-  universityPane.classList.add("hidden");
-  renderResults(results, query);
+function closeSearchInput() {
+  searchPill.classList.add("logo-mode");
+  searchPill.classList.remove("input-mode");
+  topSearchInput.value = "";
+}
+
+function runSearch(query) {
+  const normalizedQuery = query.trim();
+  const results = filterUniversities(normalizedQuery);
+  lastResults = results;
+  savedSearchText = normalizedQuery;
+
+  resultsPane.classList.remove("d-none");
+  universityPane.classList.add("d-none");
+  renderResults(results, normalizedQuery);
+  closeSearchInput();
+}
+
+function getCommunityMeta(uni) {
+  return {
+    views: uni.youtubeViews || "224K views",
+    age: uni.youtubeAge || "6 months ago",
+    channel: uni.youtubeChannel || uni.name,
+    channelLogo:
+      uni.youtubeChannelLogo ||
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/YouTube_social_white_circle_%282017%29.svg/96px-YouTube_social_white_circle_%282017%29.svg.png",
+  };
 }
 
 function renderResults(results, query) {
@@ -253,11 +534,10 @@ function renderResults(results, query) {
     const emojiStrip = document.createElement("div");
     emojiStrip.className = "emoji-strip";
 
-    uni.benefits.slice(0, 5).forEach((point) => {
+    uni.benefits.slice(0, 5).forEach((emoji, i) => {
       const chip = document.createElement("span");
-      chip.className = `emoji-chip ${point.type === "con" ? "con" : "pro"}`;
-      chip.textContent = point.emoji;
-      chip.title = point.note;
+      chip.className = `emoji-chip ${i >= 3 ? "con" : "pro"}`;
+      chip.textContent = emoji;
       emojiStrip.appendChild(chip);
     });
 
@@ -271,9 +551,7 @@ function renderResults(results, query) {
 function showUniversity(uni) {
   uniName.textContent = uni.name;
 
-  const essentialsEmoji = uni.benefits.map((item) => `<li>${item.emoji} ${item.note}</li>`).join("");
-
-  tabEssentials.innerHTML = `
+  tabInformation.innerHTML = `
     <div class="uni-detail-hero">
       <img src="${uni.image}" alt="${uni.name} campus" loading="lazy" onerror="this.src='${uni.imageFallback}'" />
     </div>
@@ -281,38 +559,64 @@ function showUniversity(uni) {
     <p>${uni.city}, ${uni.province}, Canada</p>
     <h3>Weather</h3>
     <a class="weather-button" href="${uni.weatherUrl}" target="_blank" rel="noopener noreferrer">☀️🌧️ View ${uni.city} climate trends</a>
+    <h3>QS World Ranking</h3>
+    <p class="qs-rank">${qsWorldRankings[uni.name] ? `#${qsWorldRankings[uni.name]} worldwide` : "Ranking placeholder"}</p>
     <h3>Tuition Snapshot</h3>
     <p>${uni.essentials.tuition}</p>
     <h3>Campus Life</h3>
     <p>${uni.essentials.campusLife}</p>
     <h3>Admissions Note</h3>
     <p>${uni.essentials.admissions}</p>
-    <h3>Main Pros / Cons</h3>
-    <ul>${essentialsEmoji}</ul>
   `;
 
+  const thumb = `https://img.youtube.com/vi/${uni.youtubeVideoId}/maxresdefault.jpg`;
+  const meta = getCommunityMeta(uni);
   tabCommunity.innerHTML = `
-    <h3>YouTube Links</h3>
-    <ul>${uni.community.youtube
-      .map((item) => `<li><a href="${item.url}" target="_blank" rel="noopener noreferrer">${item.label}</a></li>`)
-      .join("")}</ul>
-    <h3>Reddit Links</h3>
-    <ul>${uni.community.reddit
-      .map((item) => `<li><a href="${item.url}" target="_blank" rel="noopener noreferrer">${item.label}</a></li>`)
-      .join("")}</ul>
+    <div class="community-block youtube-block">
+      <h3>YouTube</h3>
+      <a class="video-card" href="https://www.youtube.com/watch?v=${uni.youtubeVideoId}" target="_blank" rel="noopener noreferrer">
+        <img class="video-thumb" src="${thumb}" alt="${uni.youtubeTitle} thumbnail" loading="lazy" onerror="this.src='https://img.youtube.com/vi/${uni.youtubeVideoId}/hqdefault.jpg'" />
+        <div class="video-meta">
+          <img class="channel-logo" src="${meta.channelLogo}" alt="${meta.channel} logo" loading="lazy" />
+          <div>
+            <div class="video-title">${uni.youtubeTitle}</div>
+            <div class="video-sub">${meta.channel}</div>
+            <div class="video-sub">${meta.views} • ${meta.age}</div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="community-block reddit-block">
+      <h3>Reddit</h3>
+      <a class="reddit-btn" href="${uni.redditUrl}" target="_blank" rel="noopener noreferrer">
+        <img src="${redditLogo}" alt="Reddit logo" loading="lazy" />
+        Join discussion on Reddit
+      </a>
+    </div>
   `;
 
   mapFrame.src = getUniversityEmbedUrl(uni);
-  resultsPane.classList.add("hidden");
-  universityPane.classList.remove("hidden");
-  activateTab("essentials");
+  resultsPane.classList.add("d-none");
+  universityPane.classList.remove("d-none");
+  activateTab("information");
 }
 
 function activateTab(tabName) {
-  tabs.forEach((tab) => tab.classList.toggle("active", tab.dataset.tab === tabName));
-  tabEssentials.classList.toggle("hidden", tabName !== "essentials");
-  tabCommunity.classList.toggle("hidden", tabName !== "community");
+  tabs.forEach((tab) => {
+    const isActive = tab.dataset.tab === tabName;
+    tab.classList.toggle("active", isActive);
+  });
+  tabInformation.classList.toggle("d-none", tabName !== "information");
+  tabCommunity.classList.toggle("d-none", tabName !== "community");
 }
+
+logoActivator.addEventListener("click", () => openSearchInput(true));
+
+topSearchInput.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeSearchInput();
+  }
+});
 
 topSearchForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -320,11 +624,12 @@ topSearchForm.addEventListener("submit", (event) => {
 });
 
 backToResults.addEventListener("click", () => {
-  resultsPane.classList.remove("hidden");
-  universityPane.classList.add("hidden");
+  resultsPane.classList.remove("d-none");
+  universityPane.classList.add("d-none");
   mapFrame.src = getSearchEmbedUrl(
     lastResults.length ? `Canada ${lastResults.map((uni) => uni.name).join(" OR ")}` : "Canadian universities"
   );
+  openSearchInput(true);
 });
 
 tabs.forEach((tab) => {
@@ -337,4 +642,5 @@ utilityButtons.forEach((btn) => {
   });
 });
 
+searchPill.classList.add("logo-mode");
 runSearch("");
