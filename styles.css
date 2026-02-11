@@ -316,6 +316,8 @@ body {
   font-size: 2.25rem;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
+  padding: 0;
 }
 
 .emoji-chip::before,
@@ -613,37 +615,102 @@ body {
   margin-bottom: 0.8rem;
 }
 
+
+.youtube-block {
+  border: 1px solid #d9e1ec;
+  background: #ffffff;
+}
+
+.video-card {
+  display: block;
+  border: 1px solid #d7e2ef;
+  border-radius: 12px;
+  padding: 0.6rem;
+  background: #fff;
+  text-decoration: none;
+}
+
+.video-card:hover {
+  text-decoration: none;
+  box-shadow: 0 8px 18px rgba(16, 42, 67, 0.14);
+}
+
+.video-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  object-fit: cover;
+  display: block;
+  border: 1px solid #cfdced;
+  margin-bottom: 0.7rem;
+  max-height: 340px;
+}
+
+.video-meta {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 0.7rem;
+  align-items: start;
+}
+
+.channel-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #dce6f2;
+}
+
+.video-title {
+  color: #0f1f33;
+  font-size: 1.06rem;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 0.18rem;
+}
+
+.video-sub {
+  color: #5f6f80;
+  font-size: 0.88rem;
+  line-height: 1.3;
+  text-decoration: none;
+}
+
+
 .reddit-block {
   position: relative;
   min-height: 260px;
   display: flex;
   flex-direction: column;
   border: 3px solid #ff5700;
-  background: linear-gradient(165deg, #0e1113 0%, #12161c 55%, #14263b 100%);
+  background: linear-gradient(165deg, #0e1113 0%, #12161c 58%, #14263b 100%);
   box-shadow: inset 0 0 0 1px rgba(255, 87, 0, 0.12), 0 14px 30px rgba(9, 12, 15, 0.5);
   overflow: hidden;
 }
 
-.reddit-block::before,
-.reddit-block::after {
+.reddit-block::before {
   content: "";
   position: absolute;
-  width: 11px;
-  height: 11px;
-  background: #ff5700;
-  border-radius: 3px;
-  opacity: 0.9;
-  box-shadow: 0 0 0 2px rgba(255, 87, 0, 0.25);
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 14% 28%, rgba(255,122,51,0.32) 0 4px, transparent 5px),
+    radial-gradient(circle at 24% 74%, rgba(255,122,51,0.26) 0 4px, transparent 5px),
+    radial-gradient(circle at 36% 46%, rgba(255,122,51,0.22) 0 3px, transparent 4px),
+    radial-gradient(circle at 48% 82%, rgba(255,122,51,0.24) 0 4px, transparent 5px),
+    radial-gradient(circle at 58% 34%, rgba(255,122,51,0.24) 0 3px, transparent 4px),
+    radial-gradient(circle at 66% 60%, rgba(255,122,51,0.24) 0 4px, transparent 5px),
+    radial-gradient(circle at 74% 22%, rgba(255,122,51,0.20) 0 3px, transparent 4px),
+    radial-gradient(circle at 80% 76%, rgba(255,122,51,0.26) 0 4px, transparent 5px),
+    radial-gradient(circle at 88% 44%, rgba(255,122,51,0.20) 0 3px, transparent 4px),
+    radial-gradient(circle at 20% 54%, rgba(255,122,51,0.20) 0 3px, transparent 4px),
+    radial-gradient(circle at 41% 20%, rgba(255,122,51,0.18) 0 3px, transparent 4px),
+    radial-gradient(circle at 92% 68%, rgba(255,122,51,0.18) 0 3px, transparent 4px);
 }
 
-.reddit-block::before {
-  top: 12px;
-  left: 12px;
-}
-
-.reddit-block::after {
-  right: 12px;
-  bottom: 12px;
+.reddit-block > * {
+  position: relative;
+  z-index: 1;
 }
 
 .reddit-title-row {
@@ -744,6 +811,84 @@ body {
   justify-content: center;
   align-items: flex-end;
   min-height: 128px;
+}
+
+
+
+.emoji-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(12, 18, 28, 0.52);
+  display: grid;
+  place-items: center;
+  z-index: 1200;
+  padding: 1rem;
+}
+
+.emoji-popup-card {
+  width: min(560px, 94vw);
+  border-radius: 16px;
+  padding: 1rem 1rem 1.15rem;
+  position: relative;
+  border: 3px solid #70d24f;
+  background: #f2ffe9;
+  color: #11311c;
+}
+
+.emoji-popup-card.con {
+  border-color: #d61c1c;
+  background: #fff1f1;
+  color: #4a1212;
+}
+
+.emoji-popup-dots {
+  height: 34px;
+  margin-right: 48px;
+  background:
+    linear-gradient(90deg, rgba(112,210,79,0.55) 0 0) 0% 70% / 9px 9px no-repeat,
+    linear-gradient(90deg, rgba(112,210,79,0.45) 0 0) 13% 25% / 8px 8px no-repeat,
+    linear-gradient(90deg, rgba(112,210,79,0.45) 0 0) 27% 80% / 8px 8px no-repeat,
+    linear-gradient(90deg, rgba(112,210,79,0.45) 0 0) 41% 30% / 8px 8px no-repeat,
+    linear-gradient(90deg, rgba(112,210,79,0.5) 0 0) 55% 72% / 9px 9px no-repeat,
+    linear-gradient(90deg, rgba(112,210,79,0.45) 0 0) 68% 24% / 8px 8px no-repeat,
+    linear-gradient(90deg, rgba(112,210,79,0.45) 0 0) 79% 72% / 8px 8px no-repeat,
+    linear-gradient(90deg, rgba(112,210,79,0.5) 0 0) 92% 30% / 9px 9px no-repeat;
+}
+
+.emoji-popup-card.con .emoji-popup-dots {
+  background:
+    linear-gradient(90deg, rgba(214,28,28,0.55) 0 0) 0% 70% / 9px 9px no-repeat,
+    linear-gradient(90deg, rgba(214,28,28,0.45) 0 0) 13% 25% / 8px 8px no-repeat,
+    linear-gradient(90deg, rgba(214,28,28,0.45) 0 0) 27% 80% / 8px 8px no-repeat,
+    linear-gradient(90deg, rgba(214,28,28,0.45) 0 0) 41% 30% / 8px 8px no-repeat,
+    linear-gradient(90deg, rgba(214,28,28,0.5) 0 0) 55% 72% / 9px 9px no-repeat,
+    linear-gradient(90deg, rgba(214,28,28,0.45) 0 0) 68% 24% / 8px 8px no-repeat,
+    linear-gradient(90deg, rgba(214,28,28,0.45) 0 0) 79% 72% / 8px 8px no-repeat,
+    linear-gradient(90deg, rgba(214,28,28,0.5) 0 0) 92% 30% / 9px 9px no-repeat;
+}
+
+.emoji-popup-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: 2px solid currentColor;
+  background: transparent;
+  border-radius: 8px;
+  width: 30px;
+  height: 30px;
+  line-height: 1;
+  font-weight: 800;
+}
+
+.emoji-popup-title {
+  text-align: center;
+  font-weight: 900;
+  margin: 0.25rem 0 0.8rem;
+}
+
+.emoji-popup-body {
+  margin: 0;
+  line-height: 1.5;
 }
 
 @keyframes shine-strong {

@@ -34,6 +34,49 @@ const redditQuotes = [
   '"Living here is ridiculously expensive, basically poverty wages for grad students." - u/Yeteder',
 ];
 
+
+const emojiInsightTitles = {
+  "🎓": "🎓 Strong academics",
+  "🌍": "🌍 International reputation",
+  "📚": "📚 High research output",
+  "💸": "💸 High cost",
+  "⏱️": "⏱️ Compressed schedule",
+};
+
+function ensureEmojiModal() {
+  let modal = document.getElementById("emoji-popup-modal");
+  if (modal) return modal;
+  modal = document.createElement("div");
+  modal.id = "emoji-popup-modal";
+  modal.className = "emoji-popup-overlay d-none";
+  modal.innerHTML = `
+    <div class="emoji-popup-card" role="dialog" aria-modal="true" aria-live="polite">
+      <button class="emoji-popup-close" type="button" aria-label="Close">✕</button>
+      <div class="emoji-popup-dots" aria-hidden="true"></div>
+      <h4 class="emoji-popup-title"></h4>
+      <p class="emoji-popup-body">Normally, these bubbles would show you a few quick strengths and weaknesses for each university. However, all our data is still placeholder! Thank you for being a part of our journey :)</p>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal || event.target.classList.contains("emoji-popup-close")) {
+      modal.classList.add("d-none");
+    }
+  });
+  return modal;
+}
+
+function showEmojiPopup(type, title) {
+  const modal = ensureEmojiModal();
+  const card = modal.querySelector(".emoji-popup-card");
+  const heading = modal.querySelector(".emoji-popup-title");
+  card.classList.toggle("con", type === "con");
+  card.classList.toggle("pro", type !== "con");
+  heading.textContent = title;
+  modal.classList.remove("d-none");
+}
+
 function classifyTemp(value) {
   if (value <= 2) return "cold";
   if (value <= 17) return "normal";
@@ -357,9 +400,15 @@ function renderResults(results, query) {
     const emojiStrip = document.createElement("div");
     emojiStrip.className = "emoji-strip";
     uni.benefits.forEach((emoji, i) => {
-      const chip = document.createElement("span");
-      chip.className = `emoji-chip ${i >= 3 ? "con" : "pro"}`;
+      const chipType = i >= 3 ? "con" : "pro";
+      const chip = document.createElement("button");
+      chip.type = "button";
+      chip.className = `emoji-chip ${chipType}`;
       chip.textContent = emoji;
+      chip.title = "Open quick insight";
+      chip.addEventListener("click", () => {
+        showEmojiPopup(chipType, emojiInsightTitles[emoji] || `${emoji} University insight`);
+      });
       emojiStrip.appendChild(chip);
     });
 
